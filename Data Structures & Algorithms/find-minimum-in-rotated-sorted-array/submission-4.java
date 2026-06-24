@@ -1,0 +1,34 @@
+class Solution {
+    public int findMin(int[] nums) {
+        // int low = 0;
+        // int high = nums.length - 1;
+        // int res = nums[0];
+        // while (high >= low) {
+        //     if (nums[low]>nums[high]){
+        //         res = Math.min(res,nums[high]);
+        //         high--;
+        //     }
+        //     else
+        //     {
+        //         break;
+        //     }
+        // }
+        // return res;
+        int low = 0;
+        int high = nums.length-1;
+        while(high>low)
+        {
+            int mid = (low+high)/2;
+            if(nums[mid]>nums[high])
+            {
+                low = mid+1;
+            }
+            else
+            {
+                high = mid;
+            }
+
+        }
+        return nums[low];
+    }
+}
